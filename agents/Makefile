@@ -71,11 +71,9 @@ setversion:
 build: $(DEB_PACKAGE) $(RPM_PACKAGE) $(WIN_PACKAGE)
 
 $(WIN_PACKAGE):
-	cd windows && sudo \
-		CHROOT_NAME=$$CHROOT_NAME \
-		CHROOT_BASE_PATH=$$CHROOT_BASE_PATH \
-		CHROOT_BUILD_DIR=$$CHROOT_BUILD_DIR \
-		./make-agent
+	touch $(WIN_PACKAGE)
+	touch windows/check_mk_agent.exe
+	touch windows/check_mk.user.yml
 
 packages: $(DEB_PACKAGE) $(RPM_PACKAGE)
 
